@@ -1,6 +1,6 @@
 ---
-cron:
-  name: "Docker cleanup"
-  minute: "0"
-  hour: "13"
-  job: "docker system prune -f -a > /dev/null 2>&1"
+ - cron:
+     name: "Docker cleanup"
+     minute: "0"
+     hour: "13"
+     job: "docker system prune -f -a > /dev/null 2>&1"
