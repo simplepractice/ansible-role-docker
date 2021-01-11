@@ -50,6 +50,9 @@
 - name: Docker | Deploy Config
   include_tasks: deploy_config.yml
 
+- name: Docker | Env configuration
+  include_tasks: envfile.yml
+
 - name: Docker | Proxy configuration
   include_tasks: proxy.yml
   when: docker_http_proxy is defined or

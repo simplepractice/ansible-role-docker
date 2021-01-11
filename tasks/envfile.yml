@@ -1,0 +1,9 @@
+---
+- name: Docker | Proxy | Create docker.service.d folder
+  file: path=/etc/systemd/system/docker.service.d state=directory mode=0755
+
+- name: Docker | Proxy | Docker service params
+  template: src=env-file.conf.j2 dest=/etc/systemd/system/docker.service.d/env-file.conf
+  notify:
+    - Docker | Daemon-reload
+    - Docker | Restart Docker
